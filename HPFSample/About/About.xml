@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+  <name>Harvestable Pawn Framework Sample</name>
+  <author>gguake</author>
+   	<packageId>gguake.hpfsample</packageId>
+  <supportedVersions>
+    <li>1.1</li>
+  </supportedVersions>
+  <url></url>
+  <description>
+
+  </description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+		<li>
+			<packageId>gguake.harvestablepawnframework</packageId>
+			<displayName>Harvestable Pawn Framework</displayName>
+		</li>
+	</modDependencies>
+</ModMetaData>

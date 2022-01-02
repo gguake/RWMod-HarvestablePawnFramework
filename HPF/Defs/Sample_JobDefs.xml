@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HPF.HPFJobDef ParentName="HPFJobBase">
+        <defName>ExtractLiver</defName>
+		<reportString>extracting liver from TargetA.</reportString>
+		<totalWork>400</totalWork>
+        <activeSkill>Medicine</activeSkill>
+        <activeStat>MedicalTendSpeed</activeStat>
+    </HPF.HPFJobDef>
+
+    <HPF.HPFJobDef ParentName="HPFSelfJobBase">
+        <defName>ExtractLung</defName>
+		<reportString>extracting lung from TargetA.</reportString>
+		<totalWork>400</totalWork>
+        <activeSkill>Medicine</activeSkill>
+        <activeStat>MedicalTendSpeed</activeStat>
+    </HPF.HPFJobDef>
+</Defs>

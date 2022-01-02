@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- HPF.HPFWorkGiverDef is inheritance of WorkGiverDef with some additional arguments -->
+	<HPF.HPFWorkGiverDef Name="HPFWorkGiverBase" Abstract="True">
+		<giverClass>HPF.WorkGiver_GatherPawnResources</giverClass>
+		<priorityInType>100</priorityInType>
+	</HPF.HPFWorkGiverDef>
+</Defs>

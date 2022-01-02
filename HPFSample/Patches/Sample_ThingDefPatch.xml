@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Human"]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Human"]</xpath>
+            <value>
+                <comps>
+                    <li Class="HPF.CompProperties_ResourceHarvestable">
+                        <harvestJobDef>ExtractLiver</harvestJobDef>
+                        <saveUniqueKey>HPFLiverFullness</saveUniqueKey>
+                        <thingDef>Liver</thingDef>
+                        <intervalDays>1</intervalDays>
+                        <amount>1</amount>
+                        <inspectText>Liver</inspectText>
+                        <constraints>
+                            <li Class="HPF.ConstraintPawnAgeOver">
+                                <age>20</age>
+                            </li>
+                        </constraints>
+                    </li>
+                    <li Class="HPF.CompProperties_ResourceHarvestable">
+                        <harvestJobDef>ExtractLung</harvestJobDef>
+                        <saveUniqueKey>HPFLungFullness</saveUniqueKey>
+                        <thingDef>Lung</thingDef>
+                        <intervalDays>0.1</intervalDays>
+                        <amount>1</amount>
+                        <inspectText>Lung</inspectText>
+                        <constraints>
+                            <li Class="HPF.ConstraintPawnGenderOnly">
+                                <gender>Male</gender>
+                            </li>
+                        </constraints>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="Human"]/comps</xpath>
+            <value>
+                <li Class="HPF.CompProperties_ResourceHarvestable">
+                    <harvestJobDef>ExtractLiver</harvestJobDef>
+                    <saveUniqueKey>HPFLiverFullness</saveUniqueKey>
+                    <thingDef>Liver</thingDef>
+                    <intervalDays>1</intervalDays>
+                    <amount>1</amount>
+                    <inspectText>Liver</inspectText>
+                    <constraints>
+                        <li Class="HPF.ConstraintPawnAgeOver">
+                            <age>50</age>
+                        </li>
+                    </constraints>
+                </li>
+                <li Class="HPF.CompProperties_ResourceHarvestable">
+                    <harvestJobDef>ExtractLung</harvestJobDef>
+                    <saveUniqueKey>HPFLungFullness</saveUniqueKey>
+                    <thingDef>Lung</thingDef>
+                    <intervalDays>0.1</intervalDays>
+                    <amount>1</amount>
+                    <inspectText>Lung</inspectText>
+                    <constraints>
+                        <li Class="HPF.ConstraintPawnGenderOnly">
+                            <gender>Male</gender>
+                        </li>
+                    </constraints>
+                </li>
+            </value>
+        </match>
+	</Operation>
+</Patch>

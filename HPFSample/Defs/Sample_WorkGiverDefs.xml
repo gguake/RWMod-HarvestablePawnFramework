@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HPF.HPFWorkGiverDef ParentName="HPFWorkGiverBase">
+		<defName>ExtractLiverHuman</defName>
+		<label>extract liver human</label>
+		<harvestJobDef>ExtractLiver</harvestJobDef>
+		<workType>Handling</workType>
+		<verb>shear</verb>
+		<gerund>shearing</gerund>
+		<priorityInType>80</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</HPF.HPFWorkGiverDef>
+
+	<HPF.HPFWorkGiverDef ParentName="HPFWorkGiverBase">
+		<defName>ExtractLungHuman</defName>
+		<label>extract lung human</label>
+		<harvestJobDef>ExtractLung</harvestJobDef>
+		<workType>Handling</workType>
+		<verb>shear</verb>
+		<gerund>shearing</gerund>
+		<priorityInType>80</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</HPF.HPFWorkGiverDef>
+</Defs>
