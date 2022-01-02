@@ -31,6 +31,7 @@ namespace HPF
 
 		public List<Constraint> constraints = new List<Constraint>();
 
-		public List<StatMultiplier> affectedStats = new List<StatMultiplier>();
+		public List<StatMultiplier> speedAffectedStats = new List<StatMultiplier>();
+		public List<StatMultiplier> productAffectedStats = new List<StatMultiplier>();
 	}
 }

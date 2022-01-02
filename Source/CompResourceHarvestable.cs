@@ -63,9 +63,9 @@ namespace HPF
 				{
 					progressPerTick *= PawnUtility.BodyResourceGrowthSpeed(pawn);
 
-					if (Props.affectedStats?.Any() ?? false)
+					if (Props.speedAffectedStats?.Any() ?? false)
 					{
-						foreach (var statMultiplier in Props.affectedStats)
+						foreach (var statMultiplier in Props.speedAffectedStats)
 						{
 							progressPerTick *= pawn.GetStatValue(statMultiplier.statDef) * statMultiplier.multiplier;
 						}
@@ -92,16 +92,27 @@ namespace HPF
 			}
 			else
 			{
-				int i = GenMath.RoundRandom((float)this.Props.amount * this.fullness);
-				while (i > 0)
+				float baseAmount = Props.amount;
+				if (Props.productAffectedStats?.Any() ?? false)
 				{
-					int num = Mathf.Clamp(i, 1, this.Props.thingDef.stackLimit);
-					i -= num;
+					foreach (var statMultiplier in Props.productAffectedStats)
+					{
+						baseAmount *= parent.GetStatValue(statMultiplier.statDef) * statMultiplier.multiplier;
+					}
+				}
+
+				int totalAmount = GenMath.RoundRandom(baseAmount * this.fullness);
+				while (totalAmount > 0)
+				{
+					int oneStackCount = Mathf.Clamp(totalAmount, 1, this.Props.thingDef.stackLimit);
+					totalAmount -= oneStackCount;
+
 					Thing thing = ThingMaker.MakeThing(this.Props.thingDef, null);
-					thing.stackCount = num;
+					thing.stackCount = oneStackCount;
 					GenPlace.TryPlaceThing(thing, doer.Position, doer.Map, ThingPlaceMode.Near, null, null, default(Rot4));
 				}
 			}
+
 			this.fullness = 0f;
 		}
 
