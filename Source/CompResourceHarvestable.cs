@@ -67,7 +67,7 @@ namespace HPF
 					{
 						foreach (var statMultiplier in Props.speedAffectedStats)
 						{
-							progressPerTick *= pawn.GetStatValue(statMultiplier.statDef) * statMultiplier.multiplier;
+							progressPerTick = Mathf.Max(0, progressPerTick + (parent.GetStatValue(statMultiplier.statDef) + statMultiplier.offset) * statMultiplier.multiplier);
 						}
 					}
 				}
@@ -97,7 +97,7 @@ namespace HPF
 				{
 					foreach (var statMultiplier in Props.productAffectedStats)
 					{
-						baseAmount *= parent.GetStatValue(statMultiplier.statDef) * statMultiplier.multiplier;
+						baseAmount = Mathf.Max(0, baseAmount + (parent.GetStatValue(statMultiplier.statDef) + statMultiplier.offset) * statMultiplier.multiplier);
 					}
 				}
 

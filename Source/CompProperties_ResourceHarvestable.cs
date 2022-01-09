@@ -4,9 +4,11 @@ using Verse;
 
 namespace HPF
 {
-	public class StatMultiplier
+	public class StatModifier
     {
 		public StatDef statDef;
+
+		public float offset;
 		public float multiplier;
     }
 
@@ -31,7 +33,7 @@ namespace HPF
 
 		public List<Constraint> constraints = new List<Constraint>();
 
-		public List<StatMultiplier> speedAffectedStats = new List<StatMultiplier>();
-		public List<StatMultiplier> productAffectedStats = new List<StatMultiplier>();
+		public List<StatModifier> speedAffectedStats = new List<StatModifier>();
+		public List<StatModifier> productAffectedStats = new List<StatModifier>();
 	}
 }
