@@ -129,6 +129,21 @@ namespace HPF
 			return this.Props.inspectText.Translate() + ": " + this.fullness.ToStringPercent();
 		}
 
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+			if (DebugSettings.godMode)
+            {
+                yield return new Command_Action()
+                {
+                    defaultLabel = $"DEV: Add {Props.thingDef.label} Progress +10%",
+                    action = () =>
+                    {
+                        fullness += 0.1f;
+                    }
+                };
+            }
+        }
+
 		private float fullness;
 	}
 }
